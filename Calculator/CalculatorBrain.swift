@@ -71,7 +71,6 @@ class CalculatorBrain {
                     }
                 }
             case .ConstantOperation(_, let constantValue):
-                remainingOps.append(op)
                 return (constantValue, remainingOps)
             }
         }
