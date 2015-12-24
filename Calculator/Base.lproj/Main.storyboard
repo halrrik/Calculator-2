@@ -123,6 +123,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36T-2q-eSA">
                                 <rect key="frame" x="28" y="469" width="102" height="123"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="∙"/>
+                                <connections>
+                                    <action selector="appendDecimalPoint" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9a-u0-kch"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm4-ut-qbV">
                                 <rect key="frame" x="138" y="469" width="103" height="123"/>
@@ -278,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224" y="392"/>
+            <point key="canvasLocation" x="420" y="403"/>
         </scene>
     </scenes>
 </document>

@@ -26,8 +26,19 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func appendDecimalPoint() {
+        let decimalPoint = "."
+        let value = display.text!
+        if let _ = value.rangeOfString(decimalPoint) {
+            display.text = "0" + decimalPoint
+        }
+        else {
+            display.text = display.text! + decimalPoint
+        }
+        userIsTyping = true
+    }
+    
     @IBAction func enter() {
-        userIsTyping = false
         if let result = brain.pushOperand(displayValue) {
             displayValue = result
         }
