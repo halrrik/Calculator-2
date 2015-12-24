@@ -95,4 +95,8 @@ class CalculatorBrain {
         }
         return evaluate()
     }
+    
+    func getHistory() -> String {
+        return String(opStack.suffix(15))
+    }
 }

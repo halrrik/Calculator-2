@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var history: UILabel!
     
     var userIsTyping = false
     let brain = CalculatorBrain()
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
         else {
             displayValue = 0
         }
+        history.text = brain.getHistory()
     }
     
     var displayValue: Double {
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
         set {
             display.text = "\(newValue)"
             userIsTyping = false
+            history.text = brain.getHistory()
         }
     }
     
