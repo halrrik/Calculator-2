@@ -68,5 +68,12 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func reset() {
+        brain.resetBrain()
+        userIsTyping = false
+        history.text = "EMPTY"
+        display.text = "0"
+    }
 }
 

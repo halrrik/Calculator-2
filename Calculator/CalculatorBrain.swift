@@ -99,4 +99,8 @@ class CalculatorBrain {
     func getHistory() -> String {
         return String(opStack.suffix(15))
     }
+    
+    func resetBrain() {
+        opStack.removeAll()
+    }
 }
