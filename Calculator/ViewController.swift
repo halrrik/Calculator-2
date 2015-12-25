@@ -89,5 +89,18 @@ class ViewController: UIViewController {
         history.text = "EMPTY"
         display.text = "0"
     }
+    
+    @IBAction func flipSign(sender: UIButton) {
+        if userIsTyping {
+            displayValue = -displayValue
+        }
+        else {
+            if let symbol = sender.currentTitle {
+                if let result = brain.performOperation(symbol) {
+                    displayValue = result
+                }
+            }
+        }
+    }
 }
 
