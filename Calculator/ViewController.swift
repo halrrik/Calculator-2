@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     @IBAction func appendDecimalPoint() {
         let value = display.text!
-        display.text = value.rangeOfString(".") == nil ? "0." : display.text! + "."
+        display.text = value.rangeOfString(".") == nil ? value + "." : "0."
         userIsTyping = true
     }
     
