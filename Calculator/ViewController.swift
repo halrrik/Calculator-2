@@ -69,6 +69,20 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func dropDigit() {
+        if userIsTyping {
+            if let sub = display.text?.characters.dropLast() {
+                if sub.count > 0 {
+                    display.text = String(sub)
+                }
+                else {
+                    display.text = "0"
+                    userIsTyping = false
+                }
+            }
+        }
+    }
+    
     @IBAction func reset() {
         brain.resetBrain()
         userIsTyping = false
