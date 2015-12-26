@@ -59,7 +59,6 @@ class ViewController: UIViewController {
                 display.text = "0"
             }
             else {
-                print("new value \(newValue)")
                 display.text = "\(newValue!)"
                 userIsTyping = false
                 history.text = brain.getHistory()
@@ -105,6 +104,7 @@ class ViewController: UIViewController {
     @IBAction func flipSign(sender: UIButton) {
         if userIsTyping {
             displayValue = -displayValue!
+            userIsTyping = true
         }
         else {
             if let symbol = sender.currentTitle {
