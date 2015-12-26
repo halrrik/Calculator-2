@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enter() {
-        if let result = brain.pushOperand(displayValue) {
+        if let result = brain.pushOperand(displayValue!) {
             displayValue = result
         }
         else {
@@ -43,15 +43,27 @@ class ViewController: UIViewController {
         history.text = brain.getHistory()
     }
     
-    var displayValue: Double {
+    var displayValue: Double? {
         get {
-            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+            let strVal = display.text!
+            if let convertedNum = NSNumberFormatter().numberFromString(strVal) {
+                return convertedNum.doubleValue
+            }
+            else {
+                return nil
+            }
         }
         
         set {
-            display.text = "\(newValue)"
-            userIsTyping = false
-            history.text = brain.getHistory()
+            if newValue == nil {
+                display.text = "0"
+            }
+            else {
+                print("new value \(newValue)")
+                display.text = "\(newValue!)"
+                userIsTyping = false
+                history.text = brain.getHistory()
+            }
         }
     }
     
@@ -92,7 +104,7 @@ class ViewController: UIViewController {
     
     @IBAction func flipSign(sender: UIButton) {
         if userIsTyping {
-            displayValue = -displayValue
+            displayValue = -displayValue!
         }
         else {
             if let symbol = sender.currentTitle {
