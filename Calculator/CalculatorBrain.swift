@@ -39,6 +39,41 @@ class CalculatorBrain {
     private var knownOps = [String:Op]()
     private var variableValues = [String:Double]()
     
+    var description: String {
+        var retDesc = descriptionHelper(opStack)
+        var retStr = retDesc.str
+        print("desc: \(retStr)")
+        while retDesc.remain.count > 0 {
+            retDesc = descriptionHelper(retDesc.remain)
+            retStr = retStr + "," + retDesc.str
+        }
+        return retStr
+    }
+    
+    private func descriptionHelper(ops: [Op]) -> (str: String, remain: [Op]) {
+        guard ops.count > 0 else { return ("?", ops) }
+        
+        var remainingOps = ops
+        print(String(remainingOps))
+        let op = remainingOps.removeLast()
+        
+        switch op {
+        case .Operand(let val):
+            return ("\(val)", remainingOps)
+        case .UnaryOperation(let symbol, _):
+            let operandDesc = descriptionHelper(remainingOps)
+            return (symbol+operandDesc.str, operandDesc.remain)
+        case .BinaryOperation(let symbol, _):
+            let op1Desc = descriptionHelper(remainingOps)
+            let op2Desc = descriptionHelper(op1Desc.remain)
+            return ("("+op1Desc.str + symbol + op2Desc.str+")", op2Desc.remain)
+        case .ConstantOperation(let symbol, _):
+            return (symbol, remainingOps)
+        case .Variable(let name):
+            return (name, remainingOps)
+        }
+    }
+    
     init() {
         func learnOp(op: Op) {
             knownOps[op.description] = op
