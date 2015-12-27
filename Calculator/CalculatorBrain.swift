@@ -39,17 +39,6 @@ class CalculatorBrain {
     private var knownOps = [String:Op]()
     private var variableValues = [String:Double]()
     
-    var description: String {
-        var retDesc = descriptionHelper(opStack)
-        var retStr = retDesc.str
-        print("desc: \(retStr)")
-        while retDesc.remain.count > 0 {
-            retDesc = descriptionHelper(retDesc.remain)
-            retStr = retStr + "," + retDesc.str
-        }
-        return retStr
-    }
-    
     private func descriptionHelper(ops: [Op]) -> (str: String, remain: [Op]) {
         guard ops.count > 0 else { return ("?", ops) }
         
@@ -144,9 +133,20 @@ class CalculatorBrain {
         return evaluate()
     }
     
-    var history: String { return String(opStack.suffix(15)) }
-    
     func resetBrain() {
         opStack.removeAll()
+    }
+    
+    var history: String { return String(opStack.suffix(15)) }
+    
+    var description: String {
+        var retDesc = descriptionHelper(opStack)
+        var retStr = retDesc.str
+        print("desc: \(retStr)")
+        while retDesc.remain.count > 0 {
+            retDesc = descriptionHelper(retDesc.remain)
+            retStr = retStr + "," + retDesc.str
+        }
+        return retStr
     }
 }
