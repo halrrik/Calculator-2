@@ -55,7 +55,7 @@ class CalculatorBrain {
         case .BinaryOperation(let symbol, _):
             let op1Desc = descriptionHelper(remainingOps)
             let op2Desc = descriptionHelper(op1Desc.remain)
-            return ("("+op1Desc.str + symbol + op2Desc.str+")", op2Desc.remain)
+            return ("("+op2Desc.str + symbol + op1Desc.str+")", op2Desc.remain)
         case .ConstantOperation(let symbol, _):
             return (symbol, remainingOps)
         case .Variable(let name):
@@ -136,9 +136,7 @@ class CalculatorBrain {
     func resetBrain() {
         opStack.removeAll()
     }
-    
-    var history: String { return String(opStack.suffix(15)) }
-    
+        
     var description: String {
         var retDesc = descriptionHelper(opStack)
         var retStr = retDesc.str

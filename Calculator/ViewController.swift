@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             displayValue = 0
         }
         userIsTyping = false
-        history.text = brain.getHistory()
+        history.text = brain.description
     }
     
     var displayValue: Double? {
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             }
             else {
                 display.text = "\(newValue!)"
-                history.text = brain.getHistory()
+                history.text = brain.description
             }
         }
     }
