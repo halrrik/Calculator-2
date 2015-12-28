@@ -141,7 +141,7 @@ class CalculatorBrain {
         var retStr = retDesc.str
         while retDesc.remain.count > 0 {
             retDesc = descriptionHelper(retDesc.remain)
-            retStr = retStr + "," + retDesc.str
+            retStr = retDesc.str + "," + retStr
         }
         return retStr
     }

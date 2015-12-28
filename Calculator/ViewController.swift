@@ -62,6 +62,7 @@ class ViewController: UIViewController {
             else {
                 display.text = "\(newValue!)"
                 history.text = brain.description
+                history.text?.append("=" as Character)
             }
         }
     }
