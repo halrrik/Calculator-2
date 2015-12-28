@@ -34,12 +34,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enter() {
-        if let result = brain.pushOperand(displayValue!) {
-            displayValue = result
-        }
-        else {
-            displayValue = 0
-        }
+        displayValue = brain.pushOperand(displayValue!)
         userIsTyping = false
         history.text = brain.description
     }
@@ -61,9 +56,9 @@ class ViewController: UIViewController {
             }
             else {
                 display.text = "\(newValue!)"
-                history.text = brain.description
                 history.text?.append("=" as Character)
             }
+            history.text = brain.description
         }
     }
     
@@ -72,12 +67,7 @@ class ViewController: UIViewController {
             enter()
         }
         if let operation = sender.currentTitle {
-            if let result = brain.performOperation(operation) {
-                displayValue = result
-            }
-            else {
-                displayValue = 0
-            }
+            displayValue = brain.performOperation(operation)
         }
     }
     
