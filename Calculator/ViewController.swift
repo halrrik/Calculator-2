@@ -107,11 +107,8 @@ class ViewController: UIViewController {
     
     @IBAction func defineVariable() {
         userIsTyping = false
-        
         // define variable
-        let variableName = "M"
-        let val = displayValue!
-        brain.variableValues[variableName] = val
+        brain.variableValues["M"] = displayValue!
         // evaluate and show result
         displayValue = brain.evaluate()
     }
