@@ -37,7 +37,8 @@ class CalculatorBrain {
     
     private var opStack = [Op]()
     private var knownOps = [String:Op]()
-    private var variableValues = [String:Double]()
+    
+    var variableValues = [String:Double]()
     
     private func descriptionHelper(ops: [Op]) -> (str: String, remain: [Op]) {
         guard ops.count > 0 else { return ("?", ops) }
@@ -66,6 +67,7 @@ class CalculatorBrain {
         func learnOp(op: Op) {
             knownOps[op.description] = op
         }
+        // arithmetic operations
         learnOp(Op.BinaryOperation("+", +))
         learnOp(Op.BinaryOperation("−") {$1 - $0})
         learnOp(Op.BinaryOperation("×", *))
@@ -74,8 +76,11 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("±") {-$0})
         learnOp(Op.UnaryOperation("sin") {sin($0)})
         learnOp(Op.UnaryOperation("cos") {cos($0)})
-
+        // constants
         learnOp(Op.ConstantOperation("π", M_PI))
+        // variables (hard coded variable names)
+        learnOp(Op.Variable("M"))
+
     }
     
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]) {
@@ -134,6 +139,7 @@ class CalculatorBrain {
     
     func resetBrain() {
         opStack.removeAll()
+        variableValues.removeAll()
     }
         
     var description: String {

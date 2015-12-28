@@ -114,5 +114,17 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func defineVariable() {
+        userIsTyping = false
+        
+        // define variable
+        let variableName = "M"
+        let val = displayValue!
+        brain.variableValues[variableName] = val
+        // evaluate and show result
+        displayValue = brain.evaluate()
+    }
+    
 }
 
