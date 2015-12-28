@@ -43,7 +43,6 @@ class CalculatorBrain {
         guard ops.count > 0 else { return ("?", ops) }
         
         var remainingOps = ops
-        print(String(remainingOps))
         let op = remainingOps.removeLast()
         
         switch op {
@@ -140,7 +139,6 @@ class CalculatorBrain {
     var description: String {
         var retDesc = descriptionHelper(opStack)
         var retStr = retDesc.str
-        print("desc: \(retStr)")
         while retDesc.remain.count > 0 {
             retDesc = descriptionHelper(retDesc.remain)
             retStr = retStr + "," + retDesc.str
