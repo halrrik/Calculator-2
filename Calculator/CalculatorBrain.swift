@@ -137,9 +137,17 @@ class CalculatorBrain {
         return evaluate()
     }
     
-    func resetBrain() {
+    func resetOpStack() {
         opStack.removeAll()
+    }
+    
+    func resetVariables() {
         variableValues.removeAll()
+    }
+    
+    func resetBrain() {
+        resetOpStack()
+        resetVariables()
     }
         
     var description: String {
