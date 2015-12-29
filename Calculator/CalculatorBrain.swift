@@ -171,6 +171,10 @@ class CalculatorBrain {
         resetOpStack()
         resetVariables()
     }
+    
+    func opStackDropLast() {
+        opStack.popLast()
+    }
         
     var description: String {
         var retDesc = descriptionHelper(opStack)
@@ -179,6 +183,7 @@ class CalculatorBrain {
             retDesc = descriptionHelper(retDesc.remain)
             retStr = retDesc.str + "," + retStr
         }
+
         // the limitation should adjust itself according
         // to the screen resolution.
         let num = retStr.characters.count >= 30 ? 30 : retStr.characters.count

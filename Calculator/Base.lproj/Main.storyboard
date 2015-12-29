@@ -101,7 +101,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="←"/>
                                 <connections>
-                                    <action selector="dropDigit" destination="BYZ-38-t0r" eventType="touchUpInside" id="Keb-cv-3lK"/>
+                                    <action selector="backspace" destination="BYZ-38-t0r" eventType="touchUpInside" id="1aa-oy-cTg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTd-fI-PGv">

@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func dropDigit() {
+    @IBAction func backspace() {
         if userIsTyping {
             if let sub = display.text?.characters.dropLast() {
                 if sub.count > 0 {
@@ -77,6 +77,10 @@ class ViewController: UIViewController {
                     userIsTyping = false
                 }
             }
+        }
+        else {
+            brain.opStackDropLast()
+            displayValue = brain.evaluate()
         }
     }
     
