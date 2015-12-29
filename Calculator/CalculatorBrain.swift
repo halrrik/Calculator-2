@@ -179,6 +179,10 @@ class CalculatorBrain {
             retDesc = descriptionHelper(retDesc.remain)
             retStr = retDesc.str + "," + retStr
         }
-        return retStr
+        // the limitation should adjust itself according
+        // to the screen resolution.
+        let num = retStr.characters.count >= 30 ? 30 : retStr.characters.count
+        let range = retStr.endIndex.advancedBy(-num)..<retStr.endIndex
+        return retStr.substringWithRange(range)
     }
 }

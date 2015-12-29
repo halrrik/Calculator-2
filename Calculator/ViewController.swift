@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         }
         
         set {
+            history.text = brain.description
             if newValue == nil {
                 display.text = "0"
             }
@@ -53,7 +54,6 @@ class ViewController: UIViewController {
                 display.text = "\(newValue!)"
                 history.text?.append("=" as Character)
             }
-            history.text = brain.description
         }
     }
     
