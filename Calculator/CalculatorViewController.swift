@@ -15,10 +15,10 @@ class CalculatorViewController: UIViewController {
         if let navCon = destination as? UINavigationController {
             destination = navCon.visibleViewController!
         }
-        
-        if let dvc = destination as? DrawingViewController {
-            dvc.title = "Drawing"
-        }
+//        
+//        if let dvc = destination as? DrawingViewController {
+//            dvc.title = "Drawing"
+//        }
     }
 
     @IBOutlet weak var display: UILabel!
