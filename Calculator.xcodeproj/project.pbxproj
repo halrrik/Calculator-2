@@ -15,6 +15,7 @@
 		DBB515741C2AE77000F09EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB515721C2AE77000F09EB1 /* LaunchScreen.storyboard */; };
 		DBB5157F1C2AE77000F09EB1 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB5157E1C2AE77000F09EB1 /* CalculatorTests.swift */; };
 		DBB5158A1C2AE77000F09EB1 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB515891C2AE77000F09EB1 /* CalculatorUITests.swift */; };
+		DBD6518A1C35642600D8925C /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD651891C35642600D8925C /* DrawingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DBB515851C2AE77000F09EB1 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB515891C2AE77000F09EB1 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		DBB5158B1C2AE77000F09EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD651891C35642600D8925C /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				DBB5156B1C2AE77000F09EB1 /* CalculatorViewController.swift */,
 				DBB5156D1C2AE77000F09EB1 /* Main.storyboard */,
 				DB338ECE1C2B934F001C66C7 /* CalculatorBrain.swift */,
+				DBD651891C35642600D8925C /* DrawingViewController.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB338ECF1C2B934F001C66C7 /* CalculatorBrain.swift in Sources */,
+				DBD6518A1C35642600D8925C /* DrawingViewController.swift in Sources */,
 				DBB5156C1C2AE77000F09EB1 /* CalculatorViewController.swift in Sources */,
 				DBB5156A1C2AE77000F09EB1 /* AppDelegate.swift in Sources */,
 			);
