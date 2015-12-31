@@ -16,6 +16,7 @@
 		DBB5157F1C2AE77000F09EB1 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB5157E1C2AE77000F09EB1 /* CalculatorTests.swift */; };
 		DBB5158A1C2AE77000F09EB1 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB515891C2AE77000F09EB1 /* CalculatorUITests.swift */; };
 		DBD6518A1C35642600D8925C /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD651891C35642600D8925C /* DrawingViewController.swift */; };
+		DBD6518C1C35724200D8925C /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6518B1C35724200D8925C /* AxesDrawer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DBB515891C2AE77000F09EB1 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		DBB5158B1C2AE77000F09EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD651891C35642600D8925C /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		DBD6518B1C35724200D8925C /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,12 @@
 		DBB515681C2AE76F00F09EB1 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				DBB515971C2AE84700F09EB1 /* Supporting Files */,
+				DBD6518B1C35724200D8925C /* AxesDrawer.swift */,
 				DBB5156B1C2AE77000F09EB1 /* CalculatorViewController.swift */,
 				DBB5156D1C2AE77000F09EB1 /* Main.storyboard */,
 				DB338ECE1C2B934F001C66C7 /* CalculatorBrain.swift */,
 				DBD651891C35642600D8925C /* DrawingViewController.swift */,
+				DBB515971C2AE84700F09EB1 /* Supporting Files */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				DB338ECF1C2B934F001C66C7 /* CalculatorBrain.swift in Sources */,
 				DBD6518A1C35642600D8925C /* DrawingViewController.swift in Sources */,
+				DBD6518C1C35724200D8925C /* AxesDrawer.swift in Sources */,
 				DBB5156C1C2AE77000F09EB1 /* CalculatorViewController.swift in Sources */,
 				DBB5156A1C2AE77000F09EB1 /* AppDelegate.swift in Sources */,
 			);

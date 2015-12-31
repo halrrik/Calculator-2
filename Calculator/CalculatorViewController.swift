@@ -9,6 +9,17 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destination = segue.destinationViewController
+        if let navCon = destination as? UINavigationController {
+            destination = navCon.visibleViewController!
+        }
+        
+        if let dvc = destination as? DrawingViewController {
+            dvc.title = "Drawing"
+        }
+    }
 
     @IBOutlet weak var display: UILabel!
     @IBOutlet weak var history: UILabel!
