@@ -11,9 +11,8 @@ import UIKit
 @IBDesignable
 class DrawingView: UIView {
     
-    private struct Constants {
-        static let PointsPerUnit = CGFloat(20)
-    }
+    @IBInspectable
+    var scale: CGFloat = 10
     
     var axesCenter: CGPoint {
         return convertPoint(center, fromView: superview)
@@ -21,7 +20,7 @@ class DrawingView: UIView {
 
     override func drawRect(rect: CGRect) {
         let drawer = AxesDrawer()
-        drawer.drawAxesInRect(bounds, origin: axesCenter, pointsPerUnit: Constants.PointsPerUnit)
+        drawer.drawAxesInRect(bounds, origin: axesCenter, pointsPerUnit: scale)
     }
 
 }
