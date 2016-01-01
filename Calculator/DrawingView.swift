@@ -20,9 +20,11 @@ protocol DataSource: class {
 class DrawingView: UIView {
     
     @IBInspectable
-    var scale: CGFloat = 25
+    var scale: CGFloat = 50
     @IBInspectable
-    var color: UIColor = UIColor.blackColor()
+    var color: UIColor = UIColor.blueColor()
+    @IBInspectable
+    var axesColor: UIColor = UIColor.blueColor()
     
     weak var source: DataSource?
     
@@ -31,12 +33,12 @@ class DrawingView: UIView {
     }
 
     override func drawRect(rect: CGRect) {
-        let drawer = AxesDrawer()
+        let drawer = AxesDrawer(color: axesColor, contentScaleFactor: contentScaleFactor)
         drawer.drawAxesInRect(bounds, origin: axesCenter, pointsPerUnit: scale)
         
         // draw all points fed from data source else we leave the view empty.
-        let minX = bounds.minX - axesCenter.x
-        let maxX = bounds.maxX - axesCenter.x
+        let minX = (bounds.minX - axesCenter.x) / scale
+        let maxX = (bounds.maxX - axesCenter.x) / scale
         if let points = source?.allPointsInXRange(self, from: minX, to: maxX) {
             connectAllPoints(points)
         }
@@ -46,12 +48,19 @@ class DrawingView: UIView {
         CGContextSaveGState(UIGraphicsGetCurrentContext())
         color.set()
         let path = UIBezierPath()
-        path.moveToPoint(points[0])
+        path.moveToPoint(convertPointBack(points[0]))
         for point in points[1..<points.endIndex] {
-            path.addLineToPoint(point)
-            path.moveToPoint(point)
+            let convertedPoint = convertPointBack(point)
+            path.addLineToPoint(convertedPoint)
+            path.moveToPoint(convertedPoint)
         }
         path.stroke()
         CGContextRestoreGState(UIGraphicsGetCurrentContext())
+    }
+    
+    private func convertPointBack(point: CGPoint) -> CGPoint {
+        let x = point.x * scale + axesCenter.x
+        let y = axesCenter.y - point.y * scale
+        return CGPoint(x: x, y: y)
     }
 }
