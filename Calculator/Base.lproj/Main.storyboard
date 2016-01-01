@@ -435,6 +435,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OXi-KV-Nke"/>
+                    <connections>
+                        <outlet property="drawingView" destination="9Z1-4b-9pb" id="LBx-wf-8sf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17s-yG-2XW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
