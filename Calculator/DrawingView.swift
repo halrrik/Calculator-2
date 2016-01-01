@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class DrawingView: UIView {
     
     private struct Constants {
