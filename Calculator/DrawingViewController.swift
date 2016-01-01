@@ -26,8 +26,13 @@ class DrawingViewController: UIViewController, DataSource {
     }
     
     private func updateUI() {
-        title = brain.description
+        title = getLastExpressionDesc(brain.description)
         drawingView?.setNeedsDisplay()
+    }
+    
+    private func getLastExpressionDesc(desc: String) -> String {
+        let separated = desc.componentsSeparatedByString(",")
+        return separated[separated.endIndex-1]
     }
     
     private func getPointForX(x: CGFloat) -> CGPoint? {
