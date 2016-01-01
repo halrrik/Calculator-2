@@ -170,7 +170,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8g-Sd-hny">
                                 <rect key="frame" x="304" y="510" width="84" height="82"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="+M"/>
                                 <connections>
                                     <action selector="defineVariable" destination="BYZ-38-t0r" eventType="touchUpInside" id="rDp-Nj-gdT"/>
@@ -194,7 +194,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R0-8K-vgi">
                                 <rect key="frame" x="396" y="331" width="84" height="82"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="cos"/>
                                 <connections>
                                     <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PdD-Cb-eG0"/>
