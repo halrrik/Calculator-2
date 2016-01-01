@@ -21,6 +21,8 @@ class DrawingView: UIView {
     
     @IBInspectable
     var scale: CGFloat = 25
+    @IBInspectable
+    var color: UIColor = UIColor.blackColor()
     
     weak var source: DataSource?
     
@@ -41,8 +43,15 @@ class DrawingView: UIView {
     }
     
     private func connectAllPoints(points: [CGPoint]) {
-        for point in points {
-            print("connecting: \(point)")
+        CGContextSaveGState(UIGraphicsGetCurrentContext())
+        color.set()
+        let path = UIBezierPath()
+        path.moveToPoint(points[0])
+        for point in points[1..<points.endIndex] {
+            path.addLineToPoint(point)
+            path.moveToPoint(point)
         }
+        path.stroke()
+        CGContextRestoreGState(UIGraphicsGetCurrentContext())
     }
 }

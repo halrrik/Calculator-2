@@ -17,7 +17,7 @@ class CalculatorViewController: UIViewController {
         }
         
         if let dvc = destination as? DrawingViewController {
-            dvc.title = "Drawing"
+            dvc.symbols = brain.program
         }
     }
 
