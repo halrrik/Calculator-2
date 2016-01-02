@@ -28,9 +28,13 @@ class DrawingView: UIView {
     
     weak var source: DataSource?
     
-    var axesCenter: CGPoint {
-        return convertPoint(center, fromView: superview)
+    var currentOrigin: CGPoint {
+        get {
+            return origin ?? convertPoint(center, fromView: superview)
+        }
     }
+    
+    var origin: CGPoint? { didSet { setNeedsDisplay() } }
     
     func scale(gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
@@ -41,14 +45,27 @@ class DrawingView: UIView {
         default: break
         }
     }
+    
+    func move(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .Ended: fallthrough
+        case .Changed:
+            let translation = gesture.translationInView(self)
+            let x = currentOrigin.x
+            let y = currentOrigin.y
+            origin = CGPoint(x: x + translation.x, y: y + translation.y)
+            gesture.setTranslation(CGPointZero, inView: self)
+        default: break
+        }
+    }
 
     override func drawRect(rect: CGRect) {
         let drawer = AxesDrawer(color: axesColor, contentScaleFactor: contentScaleFactor)
-        drawer.drawAxesInRect(bounds, origin: axesCenter, pointsPerUnit: scale)
+        drawer.drawAxesInRect(bounds, origin: currentOrigin, pointsPerUnit: scale)
         
         // draw all points fed from data source else we leave the view empty.
-        let minX = (bounds.minX - axesCenter.x) / scale
-        let maxX = (bounds.maxX - axesCenter.x) / scale
+        let minX = (bounds.minX - currentOrigin.x) / scale
+        let maxX = (bounds.maxX - currentOrigin.x) / scale
         if let points = source?.allPointsInXRange(self, from: minX, to: maxX) {
             connectAllPoints(points)
         }
@@ -69,8 +86,8 @@ class DrawingView: UIView {
     }
     
     private func convertPointBack(point: CGPoint) -> CGPoint {
-        let x = point.x * scale + axesCenter.x
-        let y = axesCenter.y - point.y * scale
+        let x = point.x * scale + currentOrigin.x
+        let y = currentOrigin.y - point.y * scale
         return CGPoint(x: x, y: y)
     }
 }

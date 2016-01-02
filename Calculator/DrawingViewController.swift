@@ -14,6 +14,7 @@ class DrawingViewController: UIViewController, DataSource {
         didSet {
             drawingView.source = self
             drawingView.addGestureRecognizer(UIPinchGestureRecognizer(target: drawingView, action: "scale:"))
+            drawingView.addGestureRecognizer(UIPanGestureRecognizer(target: drawingView, action: "move:"))
         }
     }
     
