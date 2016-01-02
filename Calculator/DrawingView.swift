@@ -36,6 +36,7 @@ class DrawingView: UIView {
     
     var origin: CGPoint? { didSet { setNeedsDisplay() } }
     
+    // Gesture handling code.
     func scale(gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
         case .Ended: fallthrough
@@ -58,7 +59,16 @@ class DrawingView: UIView {
         default: break
         }
     }
-
+    
+    func doubleTap(gesture: UITapGestureRecognizer) {
+        switch gesture.state {
+        case .Ended:
+            origin = gesture.locationInView(self)
+        default: break
+        }
+    }
+    
+    // overriden drawing method.
     override func drawRect(rect: CGRect) {
         let drawer = AxesDrawer(color: axesColor, contentScaleFactor: contentScaleFactor)
         drawer.drawAxesInRect(bounds, origin: currentOrigin, pointsPerUnit: scale)
@@ -71,6 +81,7 @@ class DrawingView: UIView {
         }
     }
     
+    // private methods.
     private func connectAllPoints(points: [CGPoint]) {
         CGContextSaveGState(UIGraphicsGetCurrentContext())
         color.set()

@@ -13,8 +13,13 @@ class DrawingViewController: UIViewController, DataSource {
     @IBOutlet weak var drawingView: DrawingView! {
         didSet {
             drawingView.source = self
+            
+            // setup recognizers
             drawingView.addGestureRecognizer(UIPinchGestureRecognizer(target: drawingView, action: "scale:"))
             drawingView.addGestureRecognizer(UIPanGestureRecognizer(target: drawingView, action: "move:"))
+            let tapRecognizer = UITapGestureRecognizer(target: drawingView, action: "doubleTap:")
+            tapRecognizer.numberOfTapsRequired = 2
+            drawingView.addGestureRecognizer(tapRecognizer)
         }
     }
     
