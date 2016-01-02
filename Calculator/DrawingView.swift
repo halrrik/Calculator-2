@@ -20,16 +20,26 @@ protocol DataSource: class {
 class DrawingView: UIView {
     
     @IBInspectable
-    var scale: CGFloat = 50
+    var scale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     @IBInspectable
-    var color: UIColor = UIColor.blueColor()
+    var color: UIColor = UIColor.blueColor()  { didSet { setNeedsDisplay() } }
     @IBInspectable
-    var axesColor: UIColor = UIColor.blueColor()
+    var axesColor: UIColor = UIColor.blueColor()  { didSet { setNeedsDisplay() } }
     
     weak var source: DataSource?
     
     var axesCenter: CGPoint {
         return convertPoint(center, fromView: superview)
+    }
+    
+    func scale(gesture: UIPinchGestureRecognizer) {
+        switch gesture.state {
+        case .Ended: fallthrough
+        case .Changed:
+            scale *= gesture.scale
+            gesture.scale = 1
+        default: break
+        }
     }
 
     override func drawRect(rect: CGRect) {

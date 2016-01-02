@@ -13,6 +13,7 @@ class DrawingViewController: UIViewController, DataSource {
     @IBOutlet weak var drawingView: DrawingView! {
         didSet {
             drawingView.source = self
+            drawingView.addGestureRecognizer(UIPinchGestureRecognizer(target: drawingView, action: "scale:"))
         }
     }
     
