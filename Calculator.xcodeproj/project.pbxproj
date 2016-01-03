@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB277E2D1C38E7B20073ABA7 /* GraphStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB277E2C1C38E7B20073ABA7 /* GraphStatusController.swift */; };
+		DB277E2D1C38E7B20073ABA7 /* GraphStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB277E2C1C38E7B20073ABA7 /* GraphStatusViewController.swift */; };
 		DB338ECF1C2B934F001C66C7 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB338ECE1C2B934F001C66C7 /* CalculatorBrain.swift */; };
 		DBB5156A1C2AE77000F09EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB515691C2AE77000F09EB1 /* AppDelegate.swift */; };
 		DBB5156C1C2AE77000F09EB1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB5156B1C2AE77000F09EB1 /* CalculatorViewController.swift */; };
@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DB277E2C1C38E7B20073ABA7 /* GraphStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphStatusController.swift; sourceTree = "<group>"; };
+		DB277E2C1C38E7B20073ABA7 /* GraphStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphStatusViewController.swift; sourceTree = "<group>"; };
 		DB338ECE1C2B934F001C66C7 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		DBB515661C2AE76F00F09EB1 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB515691C2AE77000F09EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				DB338ECE1C2B934F001C66C7 /* CalculatorBrain.swift */,
 				DBD6518D1C357E9E00D8925C /* DrawingView.swift */,
 				DBD651891C35642600D8925C /* DrawingViewController.swift */,
-				DB277E2C1C38E7B20073ABA7 /* GraphStatusController.swift */,
+				DB277E2C1C38E7B20073ABA7 /* GraphStatusViewController.swift */,
 				DBB515971C2AE84700F09EB1 /* Supporting Files */,
 			);
 			path = Calculator;
@@ -286,7 +286,7 @@
 				DBD6518A1C35642600D8925C /* DrawingViewController.swift in Sources */,
 				DBD6518C1C35724200D8925C /* AxesDrawer.swift in Sources */,
 				DBD6518E1C357E9E00D8925C /* DrawingView.swift in Sources */,
-				DB277E2D1C38E7B20073ABA7 /* GraphStatusController.swift in Sources */,
+				DB277E2D1C38E7B20073ABA7 /* GraphStatusViewController.swift in Sources */,
 				DBB5156C1C2AE77000F09EB1 /* CalculatorViewController.swift in Sources */,
 				DBB5156A1C2AE77000F09EB1 /* AppDelegate.swift in Sources */,
 			);

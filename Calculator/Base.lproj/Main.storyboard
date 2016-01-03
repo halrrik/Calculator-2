@@ -443,7 +443,7 @@
                     <navigationItem key="navigationItem" id="OXi-KV-Nke">
                         <barButtonItem key="rightBarButtonItem" title="Stats" id="Mcr-y4-xWG">
                             <connections>
-                                <segue destination="xi6-zq-dTV" kind="popoverPresentation" identifier="Show Status" popoverAnchorBarButtonItem="Mcr-y4-xWG" id="CKF-gC-Qwm">
+                                <segue destination="xi6-zq-dTV" kind="popoverPresentation" identifier="Show Graph Status" popoverAnchorBarButtonItem="Mcr-y4-xWG" id="CKF-gC-Qwm">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -457,10 +457,10 @@
             </objects>
             <point key="canvasLocation" x="1680" y="1073"/>
         </scene>
-        <!--Graph Status Controller-->
+        <!--Graph Status View Controller-->
         <scene sceneID="4NG-Sm-nSy">
             <objects>
-                <viewController id="xi6-zq-dTV" customClass="GraphStatusController" sceneMemberID="viewController">
+                <viewController id="xi6-zq-dTV" customClass="GraphStatusViewController" customModule="Calculator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0TJ-xk-ATY"/>
                         <viewControllerLayoutGuide type="bottom" id="v9g-mG-c7o"/>
@@ -497,6 +497,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="2NF-wY-4eQ" id="FJi-N2-3ju"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7DW-W0-3Gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -553,6 +556,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7ma-gk-cHZ"/>
+        <segue reference="RCa-kC-A3l"/>
     </inferredMetricsTieBreakers>
 </document>
