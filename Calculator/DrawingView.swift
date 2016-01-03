@@ -8,6 +8,17 @@
 
 import UIKit
 
+struct GraphStatus {
+    var minX: CGFloat
+    var minY: CGFloat
+    var maxX: CGFloat
+    var maxY: CGFloat
+    
+    var description: String {
+        return "minX: \(minX)\nminX: \(minY)\nmaxX: \(maxX)\nmaxY: \(minY)\n"
+    }
+}
+
 // gives all points to be drawn from the data source
 // the coordinate system for the points is centered
 // at the conventional origin, which is the center of 
@@ -27,6 +38,8 @@ class DrawingView: UIView {
     var axesColor: UIColor = UIColor.blueColor()  { didSet { setNeedsDisplay() } }
     
     weak var source: DataSource?
+    
+    var status: GraphStatus?
     
     var currentOrigin: CGPoint {
         get {
@@ -97,8 +110,21 @@ class DrawingView: UIView {
     }
     
     private func convertPointBack(point: CGPoint) -> CGPoint {
+        registerStatus(point)
         let x = point.x * scale + currentOrigin.x
         let y = currentOrigin.y - point.y * scale
         return CGPoint(x: x, y: y)
+    }
+    
+    private func registerStatus(point: CGPoint) {
+        guard status != nil else {
+            status = GraphStatus(minX: point.x, minY: point.y, maxX: point.x, maxY: point.y)
+            return
+        }
+        
+        status!.maxX = max(status!.maxX, point.x)
+        status!.maxY = max(status!.maxY, point.y)
+        status!.minX = min(status!.minX, point.x)
+        status!.minY = min(status!.minY, point.y)
     }
 }

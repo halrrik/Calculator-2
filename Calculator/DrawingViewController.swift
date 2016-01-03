@@ -8,7 +8,11 @@
 
 import UIKit
 
-class DrawingViewController: UIViewController, DataSource {
+class DrawingViewController: UIViewController, DataSource, UIPopoverPresentationControllerDelegate {
+    
+    private struct Constants {
+        static let StatusSegueIdentifier = "Show Graph Status"
+    }
     
     @IBOutlet weak var drawingView: DrawingView! {
         didSet {
@@ -21,6 +25,25 @@ class DrawingViewController: UIViewController, DataSource {
             tapRecognizer.numberOfTapsRequired = 2
             drawingView.addGestureRecognizer(tapRecognizer)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destination = segue.destinationViewController
+        switch segue.identifier! {
+        case Constants.StatusSegueIdentifier:
+            if let gsv = destination as? GraphStatusViewController {
+                if let ppv = gsv.popoverPresentationController {
+                    ppv.delegate = self
+                }
+                gsv.text = drawingView.status?.description ?? ""
+            }
+        default: break
+        }
+    }
+    
+    // make sure that the popover is displayed even it's running on iPhone.
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
     }
     
     let brain = CalculatorBrain()
