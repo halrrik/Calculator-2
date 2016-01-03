@@ -440,7 +440,15 @@
                             <constraint firstItem="9Z1-4b-9pb" firstAttribute="bottom" secondItem="UM3-cq-MaY" secondAttribute="top" id="o6X-Bf-UAO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="OXi-KV-Nke"/>
+                    <navigationItem key="navigationItem" id="OXi-KV-Nke">
+                        <barButtonItem key="rightBarButtonItem" title="Stats" id="Mcr-y4-xWG">
+                            <connections>
+                                <segue destination="xi6-zq-dTV" kind="popoverPresentation" identifier="Show Status" popoverAnchorBarButtonItem="Mcr-y4-xWG" id="CKF-gC-Qwm">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="drawingView" destination="9Z1-4b-9pb" id="LBx-wf-8sf"/>
                     </connections>
@@ -448,6 +456,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17s-yG-2XW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1680" y="1073"/>
+        </scene>
+        <!--Graph Status Controller-->
+        <scene sceneID="4NG-Sm-nSy">
+            <objects>
+                <viewController id="xi6-zq-dTV" customClass="GraphStatusController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0TJ-xk-ATY"/>
+                        <viewControllerLayoutGuide type="bottom" id="v9g-mG-c7o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rdh-2V-hHW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2NF-wY-4eQ">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2NF-wY-4eQ" secondAttribute="trailing" id="0Ju-ew-0aZ"/>
+                            <constraint firstItem="2NF-wY-4eQ" firstAttribute="top" secondItem="0TJ-xk-ATY" secondAttribute="bottom" constant="8" symbolic="YES" id="8z2-7T-4HG"/>
+                            <constraint firstItem="2NF-wY-4eQ" firstAttribute="leading" secondItem="Rdh-2V-hHW" secondAttribute="leading" id="HQk-6R-Wza"/>
+                            <constraint firstAttribute="trailing" secondItem="2NF-wY-4eQ" secondAttribute="trailing" id="n74-jl-M1K"/>
+                            <constraint firstItem="2NF-wY-4eQ" firstAttribute="leading" secondItem="Rdh-2V-hHW" secondAttribute="leading" id="rRC-J2-ViD"/>
+                            <constraint firstItem="2NF-wY-4eQ" firstAttribute="bottom" secondItem="v9g-mG-c7o" secondAttribute="top" id="tRa-X6-5p7"/>
+                            <constraint firstItem="2NF-wY-4eQ" firstAttribute="top" secondItem="0TJ-xk-ATY" secondAttribute="bottom" constant="8" symbolic="YES" id="xkh-zi-wTW"/>
+                            <constraint firstItem="2NF-wY-4eQ" firstAttribute="centerY" secondItem="Rdh-2V-hHW" secondAttribute="centerY" id="z5s-d8-Uqn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0Ju-ew-0aZ"/>
+                                <exclude reference="8z2-7T-4HG"/>
+                                <exclude reference="HQk-6R-Wza"/>
+                                <exclude reference="z5s-d8-Uqn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7DW-W0-3Gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2376" y="1073"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Zjr-MT-a3Y">
