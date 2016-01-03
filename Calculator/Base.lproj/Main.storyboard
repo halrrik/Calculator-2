@@ -216,12 +216,12 @@
                                     <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w2c-bU-8Lb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps6-pw-PKU" customClass="draw" customModule="Calculator">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps6-pw-PKU">
                                 <rect key="frame" x="488" y="152" width="84" height="82"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="📈"/>
                                 <connections>
-                                    <segue destination="Uq9-zH-vrC" kind="showDetail" id="7ma-gk-cHZ"/>
+                                    <segue destination="Uq9-zH-vrC" kind="showDetail" identifier="Draw" id="7ma-gk-cHZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0n-Qa-3Wf">
@@ -556,6 +556,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RCa-kC-A3l"/>
+        <segue reference="7ma-gk-cHZ"/>
     </inferredMetricsTieBreakers>
 </document>

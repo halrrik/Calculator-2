@@ -96,6 +96,8 @@ class DrawingView: UIView {
     
     // private methods.
     private func connectAllPoints(points: [CGPoint]) {
+        guard points.count > 0 else { return }
+        
         CGContextSaveGState(UIGraphicsGetCurrentContext())
         color.set()
         let path = UIBezierPath()
